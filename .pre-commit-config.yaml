@@ -1,0 +1,26 @@
+repos:
+  - repo: https://github.com/psf/black
+    rev: 23.9.1
+    hooks:
+      - id: black
+        args: ["--line-length", "88"]
+
+  - repo: https://github.com/PyCQA/pylint
+    rev: v2.17.5
+    hooks:
+      - id: pylint
+        name: pylint
+        entry: pylint
+        language: python
+        types: [python]
+        args: ["--disable=C0114,C0116"]
+
+  - repo: https://github.com/Eenaagarwal/test.git
+    hooks:
+      - id: comment-check
+        name: comment check 
+        # entry: python testing_pricommit.py/comment_check.py
+        entry: python comment_check.py
+        language: python
+        types: [python]
+        args: []
